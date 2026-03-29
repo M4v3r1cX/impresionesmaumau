@@ -37,7 +37,24 @@
           <button type="button" class="btn btn-primary" onclick="agregarDetalle('Impresión Full BN: $200'); sumar(200)">Impresión Full BN</button>
           <button type="button" class="btn btn-primary" onclick="agregarDetalle('Impresión Color: $150'); sumar(150)">Impresión Color</button>
           <button type="button" class="btn btn-primary" onclick="agregarDetalle('Impresión Full Color: $300'); sumar(300)">Impresión Full Color</button>
-          <button type="button" class="btn btn-primary" onclick="agregarDetalle('Formatear Imagen: $50'); sumar(50)">Formatear Imagen</button>
+          <button type="button" class="btn btn-primary" onclick="agregarDetalle('Formato Imagen: $50'); sumar(50)">Formato Imagen</button>
+        </div>
+        <h3 style="text-align: center;">Páginas Personalizadas</h3>
+        <div>
+          <input type="number" id="paginasPersonalizadas" class="form-control" placeholder="0" min="1"><br />
+          <div class="row">
+            <div class="col-md-9 align-items-start">
+              <input type="checkbox" id="checkboxColor" class="form-check-input">
+              <label for="checkboxColor" class="form-check-label">En Color</label></input>
+              <input type="checkbox" id="checkboxFull" class="form-check-input">
+              <label for="checkboxFull" class="form-check-label">Full</label></input>
+              <input type="checkbox" id="checkboxDuplex" class="form-check-input">
+              <label for="checkboxDuplex" class="form-check-label">Duplex</label></input>
+            </div>
+            <div class="col-md-3 align-items-end">
+              <button type="button" class="btn btn-primary align-self-end" onclick="agregarPaginasPersonalizadas()">Cotizar</button>
+              </div>
+          </div>
         </div>
       </div>
       <div class="col-md-3">
@@ -71,7 +88,6 @@
           <button type="button" class="btn btn-primary" onclick="agregarDetalle('50 x 10x15: $15000'); sumar(15000)">50 x 10x15</button>
           <button type="button" class="btn btn-primary" onclick="agregarDetalle('100 x 10x15: $25000'); sumar(25000)">100 x 10x15</button>
         </div>
-
       </div>
     </div>
     <br /><br />
