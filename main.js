@@ -2,9 +2,6 @@ let total = 0;
 let totalDisplay = '';
 let detalleDisplay = '';
 let paginas;
-let esColor;
-let esFull;
-let esDuplex;
 
 document.addEventListener("DOMContentLoaded", function(event) {
         totalDisplay = document.getElementById('total');
@@ -25,9 +22,9 @@ function reiniciar() {
     totalDisplay.innerHTML = total;
     detalleDisplay.innerHTML = '';
     paginas.value = '';
-    esColor.checked = false;
-    esFull.checked = false;
-    esDuplex.checked = false;
+    document.getElementById('checkboxColor').checked = false;
+    document.getElementById('checkboxFull').checked = false;
+    document.getElementById('checkboxDuplex').checked = false;
 }
 
 function agregarDetalle(texto) {
@@ -36,11 +33,15 @@ function agregarDetalle(texto) {
 }
 
 function agregarPaginasPersonalizadas() {
+    let esColor = document.getElementById('checkboxColor').checked;
+    let esFull = document.getElementById('checkboxFull').checked;
+    let esDuplex = document.getElementById('checkboxDuplex').checked;
     let precio = esColor ? (esFull ? 300 : 150) : (esFull ? 200 : 100);
     if (esDuplex) {
-        precio = (precio * 2) * 0.75;
-        precio = Math.round(precio);
+        console.log('es duplex');
+        precio = precio * 0.75;
     }
+
     let totalPaginas = paginas.value * precio;
     agregarDetalle(`Páginas Personalizadas (${paginas.value} ${esColor ? 'Color' : 'BN'}${esFull ? ' Full' : ''}${esDuplex ? ' Duplex' : ''}): $${totalPaginas}`);
     sumar(totalPaginas);
